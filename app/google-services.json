@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1088344626935",
+    "firebase_url": "https://socail-network-595a2.firebaseio.com",
+    "project_id": "socail-network-595a2",
+    "storage_bucket": "socail-network-595a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088344626935:android:8a76b82400b7e1d70be5f2",
+        "android_client_info": {
+          "package_name": "com.example.socailnetwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088344626935-6avvlagtseafd4ntoj8oqcg196aeh2g6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.socailnetwork",
+            "certificate_hash": "d786a291955fd233d471cc77747c396f15467da9"
+          }
+        },
+        {
+          "client_id": "1088344626935-lcbgl93depuse9k2cucv4hl8e4hro4vu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZuuNX3d8CbS2qfmWWlUYuHgwQH2Ir8tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1088344626935-lcbgl93depuse9k2cucv4hl8e4hro4vu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
