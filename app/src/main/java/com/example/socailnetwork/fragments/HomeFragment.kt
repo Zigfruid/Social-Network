@@ -8,8 +8,12 @@ import androidx.fragment.app.Fragment
 import com.example.socailnetwork.R
 import com.example.socailnetwork.adapter.PostAdapter
 import com.example.socailnetwork.data.Post
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.firestore.FieldPath
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
 import kotlinx.android.synthetic.main.home_fragment.*
+
 
 class HomeFragment : Fragment(R.layout.home_fragment) {
 
@@ -19,6 +23,7 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
         super.onViewCreated(view, savedInstanceState)
         rv1.adapter = mAdapter
         getAllPosts()
+
     }
 
     private fun getAllPosts(){
@@ -28,8 +33,8 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
                 Toast.makeText(requireContext(), error.message.toString(), Toast.LENGTH_LONG).show()
                 return@addSnapshotListener
             }
-            db.collection("posts").get().addOnSuccessListener {
-                it.documents.forEach{doc->
+            db.collection("posts").get().addOnSuccessListener { i ->
+                i.documents.forEach{doc->
                     val model = doc.toObject(Post::class.java)
                    model?.let {
                        result.add(model)
@@ -40,4 +45,6 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
             }
         }
     }
+
+
 }
