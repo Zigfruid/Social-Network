@@ -88,7 +88,6 @@ class AccountFragment : Fragment(R.layout.account_fragment) {
                 etUserName.isEnabled = true
                 etEmailAddress.isEnabled = true
                 etPhoneNumber.isEnabled = true
-
                }
     }
 }
