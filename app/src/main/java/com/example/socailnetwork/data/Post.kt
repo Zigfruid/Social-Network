@@ -1,6 +1,7 @@
 package com.example.socailnetwork.data
 
 data class Post(
+    var id: String = "",
     var username: String =" ",
     var like: Int = 0,
     var dislike: Int = 0,

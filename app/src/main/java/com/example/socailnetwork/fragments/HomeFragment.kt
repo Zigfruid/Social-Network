@@ -1,5 +1,6 @@
 package com.example.socailnetwork.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.socailnetwork.R
 import com.example.socailnetwork.adapter.PostAdapter
 import com.example.socailnetwork.data.Post
+import com.example.socailnetwork.ui.CommentActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldPath
@@ -27,7 +29,11 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
         super.onViewCreated(view, savedInstanceState)
         rv1.adapter = mAdapter
         getAllPosts()
-
+        mAdapter.setOnItemClickListener {
+            val intent = Intent(requireContext(),CommentActivity::class.java)
+            intent.putExtra("postId", it.id)
+            startActivity(intent)
+        }
     }
 
     private fun getAllPosts(){
@@ -44,6 +50,7 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
                 i.documents.forEach { doc ->
                     val model = doc.toObject(Post::class.java)
                     model?.username = a
+                    model?.id = doc.id
                     model?.let {
                         result.add(model)
                     }

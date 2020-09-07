@@ -16,13 +16,19 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
         notifyDataSetChanged()
     }
 
+    private var onItemClicked : (model:Post) -> Unit = {}
+    fun setOnItemClickListener(onItemClicked:(model:Post) -> Unit){
+        this.onItemClicked = onItemClicked
+    }
 
     inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun popMod(data: Post){
             itemView.tvUserName.text = data.username
             itemView.tvDescription.text = data.theme
             itemView.tvPost.text = data.text
-
+            itemView.setOnClickListener {
+                onItemClicked.invoke(data)
+            }
         }
     }
 
