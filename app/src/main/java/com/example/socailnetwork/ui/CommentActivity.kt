@@ -49,7 +49,7 @@ class CommentActivity : AppCompatActivity() {
                 if (it.exists()){
                     post = "yes"
                     it.get("comments")?.let {comment ->
-                        cAdapter.item = comment as List<String>
+                        cAdapter.item = comment as List<Map<String, String>>
                     }
                 }
             }

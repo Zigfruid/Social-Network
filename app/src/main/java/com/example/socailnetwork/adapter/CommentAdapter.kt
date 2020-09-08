@@ -9,12 +9,13 @@ import kotlinx.android.synthetic.main.comment_item.view.*
 
 class CommentAdapter : RecyclerView.Adapter<CommentAdapter.CommentViewHolder>() {
     inner class CommentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        fun popMod(comment : String){
-            itemView.tvComment.text = comment
+        fun popMod(comment : Map<String, String>){
+            itemView.tvComment.text = comment["comment_text"]
+            itemView.tvCommentUsername.text = "@${comment["username"]}"
         }
     }
 
-    var item: List<String> = listOf()
+    var item: List<Map<String, String>> = listOf()
     set(value) {
         field = value
         notifyDataSetChanged()
