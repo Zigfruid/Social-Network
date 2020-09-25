@@ -1,5 +1,6 @@
 package com.example.socailnetwork.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +22,11 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
         this.onItemClicked = onItemClicked
     }
 
+    private var onCommentClicked: (model: Post) -> Unit = {}
+    fun setOnCommentClickListener(onCommentClicked: (model: Post) -> Unit){
+        this.onCommentClicked = onCommentClicked
+    }
+
     inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun popMod(data: Post){
             itemView.tvUserName.text = data.username
@@ -28,6 +34,9 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
             itemView.tvPost.text = data.text
             itemView.setOnClickListener {
                 onItemClicked.invoke(data)
+            }
+            itemView.btnComment.setOnClickListener {
+                onCommentClicked.invoke(data)
             }
         }
     }

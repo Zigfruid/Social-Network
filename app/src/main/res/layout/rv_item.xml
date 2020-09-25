@@ -97,16 +97,50 @@
                     android:layout_marginStart="8dp"
                     android:layout_height="40dp"/>
 
+                <TextView
+                    android:id="@+id/likeCounter"
+                    app:layout_constraintStart_toEndOf="@id/btnLike"
+                    app:layout_constraintTop_toTopOf="@id/btnLike"
+                    app:layout_constraintBottom_toBottomOf="@id/btnLike"
+                    android:gravity="center"
+                    android:layout_width="32dp"
+                    android:textSize="16dp"
+                    android:text="0"
+                    android:layout_height="32dp"/>
+
                 <ImageView
                     android:id="@+id/btnDisLike"
                     android:src="@drawable/ic_baseline_thumb_down_24"
                     android:layout_width="40dp"
                     android:padding="8dp"
-                    app:layout_constraintStart_toEndOf="@id/btnLike"
+                    app:layout_constraintStart_toEndOf="@id/likeCounter"
                     app:layout_constraintTop_toTopOf="parent"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_height="40dp"/>
+
+                <TextView
+                    android:id="@+id/disLikeCounter"
+                    app:layout_constraintStart_toEndOf="@id/btnDisLike"
+                    app:layout_constraintTop_toTopOf="@id/btnDisLike"
+                    app:layout_constraintBottom_toBottomOf="@id/btnDisLike"
+                    android:gravity="center"
+                    android:layout_width="32dp"
+                    android:textSize="16dp"
+                    android:text="0"
+                    android:layout_height="32dp"/>
+
+
+                <ImageView
+                    android:id="@+id/btnComment"
+                    android:src="@drawable/comment"
+                    android:padding="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintStart_toEndOf="@id/disLikeCounter"
+                    app:layout_constraintTop_toTopOf="@id/btnDisLike"
+                    app:layout_constraintBottom_toBottomOf="@id/btnDisLike"/>
 
                 <TextView
                     android:id="@+id/tvPost"

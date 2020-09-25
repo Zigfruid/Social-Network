@@ -1,10 +1,9 @@
-package com.example.socailnetwork.ui
+package com.example.socailnetwork.comment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
-import androidx.core.view.isNotEmpty
 import com.example.socailnetwork.R
 import com.example.socailnetwork.adapter.CommentAdapter
 import com.google.firebase.firestore.FirebaseFirestore
